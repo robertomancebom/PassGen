@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PassGen</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/flat-design-security-set-one/24/key-512.png">
+
+    </head>
+    <body>
+        <h1 id="title">PassGen</h1>
+        <div class="container">
+            <div id="result"></div>
+            <div class="options">
+                <div class="option">
+                    <label for="length">Length</label>
+                    <input type="number" id="length" name="length" value="8" min="4" max="20" />
+                </div>
+                <div class="option">
+                    <label for="upper">Upper Case Letters</label>
+                    <input type="checkbox" id="upper" name="upper"/>
+                </div>
+                <div class="option">
+                    <label for="number">Numbers</label>
+                    <input type="checkbox" id="number" name="number"/>
+                </div>
+                <div class="option">
+                    <label for="symbol">Symbols</label>
+                    <input type="checkbox" id="symbol" name="symbol"/>
+                </div>
+            </div>     
+        </div>
+        <div id="btn-row">
+            <button id="gen-btn">Generate</button>
+            <button id="cp-btn">Copy</button>
+        </div>
+    </body>
+</html>
