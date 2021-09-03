@@ -14,28 +14,30 @@ const result = document.getElementById("result");
 //values
 const letters = 'abcdefghijklmnopqrstuvwxyz';
 const numbers = '0123456789';
-const symbols = `!"#$%&'()*+,-./\\:;<=>?@[]^_\`{|}~`;
+const symbols = `!#$%&()*+,-./:;<=>?@[]^_{|}~`;
 
 var alphabet = '';
 var password = '';
 
 function generatePassword() {
-    
-    password=''; //clear password
-
-    alphabet = letters;
-    
-    if(number_check.checked){
-        alphabet += numbers;
+    if(pass_length.value < 4 || pass_length.value > 20){
+        alert("Length must be between 4 and 20");
+    } else {
+        password=''; //clear password
+        alphabet = letters;
+        
+        if(number_check.checked){
+            alphabet += numbers;
+        }
+        if(symbol_check.checked){
+            alphabet += symbols;
+        }
+        
+        for(var x=0; x < pass_length.value; x++) {
+            password += generateRandomCharacter();
+        }
+        result.innerHTML = password;
     }
-    if(symbol_check.checked){
-        alphabet += symbols;
-    }
-    
-    for(var x=0; x < pass_length.value; x++) {
-        password += generateRandomCharacter();
-    }
-    result.innerHTML = password;
 }
 
 function generateRandomCharacter () {
